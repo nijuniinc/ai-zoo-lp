@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F7FFF3">
+<title>AIどうぶつえん（仮）｜集中すると、新しいどうぶつが生まれる。</title>
+<meta name="description" content="スマホを置いて集中すると、タマゴが育ってふしぎなどうぶつが生まれる。集めて、育てて、自分だけのどうぶつえんを作るiOSフォーカスゲーム。">
+<style>
+:root{--green:#20a665;--green2:#7fd56d;--blue:#2f8ef4;--sky:#eefdff;--orange:#ffad32;--ink:#243146;--muted:#607089;--cream:#fffdf5;--card:#fff;--pink:#ff8fa5;--shadow:0 14px 40px rgba(44,89,78,.12);}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f7fff4 0,#fff 25%,#f8fbff 100%);line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(31,111,81,.08)}.nav-in{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:900;font-size:20px;letter-spacing:-.04em;color:#118451}.brand span{color:#2f8ef4}.navlinks{display:flex;align-items:center;gap:22px;font-weight:700;font-size:14px;color:#536071}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 22px;font-weight:900;cursor:pointer;transition:.2s;box-shadow:none}.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,#20a665,#48c77d);color:#fff;box-shadow:0 10px 26px rgba(32,166,101,.25)}.btn-secondary{background:#fff;color:#168a56;border:2px solid #bdebd2}.hero{padding:58px 0 42px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:42px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;background:#eafff1;color:#148052;border-radius:999px;font-size:13px;font-weight:900}h1{font-size:clamp(44px,6vw,76px);line-height:1.05;letter-spacing:-.065em;margin:18px 0}h1 .accent{background:linear-gradient(90deg,#1fa867,#2f8ef4);-webkit-background-clip:text;color:transparent}.lead{font-size:19px;color:#526176;max-width:650px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.note{font-size:13px;color:#7a8799;margin-top:10px}.hero-zoo{position:relative;min-height:520px}.blob{position:absolute;inset:34px 0 0 0;background:linear-gradient(180deg,#dff8ff 0,#ecffd9 65%,#bce787 65%,#8fd464 100%);border-radius:48% 52% 34% 38%/40% 42% 30% 34%;box-shadow:var(--shadow)}.zoo-sign{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:5;background:#fff5c8;border:4px solid #9a6739;padding:8px 22px;border-radius:14px;font-weight:950;color:#81542f;box-shadow:0 8px 0 rgba(154,103,57,.14)}.hero-char{position:absolute;width:180px;border-radius:28px;background:#fff;box-shadow:0 16px 35px rgba(55,89,91,.16);padding:8px}.hero-char img{width:100%;display:block;border-radius:21px}.hc1{left:7%;top:100px;transform:rotate(-7deg)}.hc2{right:4%;top:85px;transform:rotate(7deg)}.hc3{left:31%;top:235px;width:196px;z-index:4}.hc4{left:2%;bottom:10px;width:150px;transform:rotate(6deg)}.hc5{right:5%;bottom:8px;width:154px;transform:rotate(-5deg)}.float-pill{position:absolute;z-index:6;background:#fff;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:900;box-shadow:0 9px 22px rgba(38,94,71,.12)}.fp1{left:0;top:48px}.fp2{right:0;top:220px}section{padding:88px 0}.section-head{text-align:center;max-width:760px;margin:0 auto 38px}.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.15;letter-spacing:-.045em;margin:0 0 12px}.section-head p{color:#65748a;font-size:17px;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:#fff;border:1px solid #e7f1eb;border-radius:28px;padding:28px;box-shadow:var(--shadow)}.step-num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#e9fff1;color:#17955b;font-weight:950}.step-icon{font-size:56px;margin:18px 0 8px}.step h3{font-size:22px;margin:0 0 8px}.step p{color:#69768a;margin:0}.phone-wrap{margin-top:36px;display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center;background:linear-gradient(135deg,#eafff1,#eaf7ff);border-radius:36px;padding:34px}.phone{width:min(310px,100%);margin:auto;background:#10151e;border-radius:46px;padding:10px;box-shadow:0 24px 54px rgba(23,48,59,.22)}.phone-screen{min-height:560px;border-radius:38px;background:linear-gradient(#f7fff3 0,#edfaff 56%,#c9ed9c 56%,#a8df76 100%);padding:26px 18px;position:relative;overflow:hidden;text-align:center}.phone-top{font-size:12px;font-weight:900;color:#445}.egg{font-size:120px;filter:drop-shadow(0 12px 14px rgba(82,122,74,.16));margin:68px 0 8px}.timer{font-size:44px;font-weight:950;letter-spacing:-.04em}.phone-small{font-size:13px;color:#65748a}.phone-cta{position:absolute;bottom:22px;left:18px;right:18px;background:#fff;border-radius:18px;padding:14px;font-weight:900;color:#168b55}.phone-copy h3{font-size:34px;line-height:1.25;margin:0 0 12px}.bullet{display:grid;gap:12px;margin-top:24px}.bullet div{display:flex;gap:12px;align-items:flex-start;font-weight:800}.tick{width:26px;height:26px;border-radius:50%;background:#fff;color:#1ba15f;display:grid;place-items:center;flex:0 0 auto}.gallery-section{background:#fffdf8}.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}.filter{border:1px solid #dfeadf;background:#fff;border-radius:999px;padding:9px 14px;font-weight:850;color:#607065;cursor:pointer}.filter.active{background:#1fa665;color:#fff;border-color:#1fa665}.characters{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.character-card{background:#fff;border:1px solid #edf1ea;border-radius:24px;overflow:hidden;box-shadow:0 8px 28px rgba(72,92,76,.08);transition:.2s}.character-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(72,92,76,.14)}.character-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}.character-meta{padding:13px 15px 16px;display:flex;flex-direction:column}.character-meta strong{font-size:17px}.character-meta span{font-size:12px;color:#7a8798}.infinite{margin-top:26px;text-align:center;font-weight:900;font-size:18px;color:#2f8261}.pro{background:linear-gradient(135deg,#fff8dd,#fff 45%,#effcff)}.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.species-card{background:#fff;border:1px solid #f1e4b2;border-radius:32px;padding:22px;box-shadow:var(--shadow)}.species-top{display:flex;justify-content:space-between;align-items:center}.newbadge{background:#ff6f7f;color:#fff;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:950}.species-image{width:74%;margin:12px auto;border-radius:26px;overflow:hidden}.species-image img{display:block;width:100%}.species-card h3{font-size:34px;margin:8px 0 0;text-align:center}.discoverer{text-align:center;font-weight:950;color:#2b8c65}.pro-copy h2{font-size:44px;line-height:1.1;letter-spacing:-.045em;margin:0 0 14px}.pro-copy .big{font-size:21px;font-weight:900;color:#735d2c}.mix-box{margin-top:26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.mix{background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 6px 18px rgba(62,91,72,.08);font-weight:900}.plus{font-size:24px;font-weight:950;color:#ff9b24}.zoo-social{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.zoo-map{background:linear-gradient(#dff8ff 0 48%,#c5ed9d 48%);border-radius:36px;min-height:430px;padding:28px;position:relative;overflow:hidden;box-shadow:var(--shadow)}.zoo-map h3{position:relative;z-index:5;margin:0;font-size:26px}.mini-zoo{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;position:relative;z-index:3}.mini-zoo img{width:100%;border-radius:24px;background:#fff;padding:5px;box-shadow:0 10px 24px rgba(60,90,69,.12)}.social-copy h2{font-size:42px;line-height:1.15;letter-spacing:-.04em}.freepro{background:#f7fbff}.pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:auto}.plan{background:#fff;border:1px solid #e3ecf3;border-radius:28px;padding:28px;box-shadow:var(--shadow)}.plan.proplan{border:3px solid #f6bd45;position:relative}.plan h3{font-size:28px;margin:0}.price{font-size:38px;font-weight:950;margin:10px 0}.price small{font-size:14px;color:#7b8797}.plan ul{list-style:none;padding:0;margin:20px 0;display:grid;gap:10px}.plan li:before{content:'✓';color:#18a15e;font-weight:950;margin-right:8px}.coming{position:absolute;right:18px;top:18px;background:#fff0bd;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900}.cta{padding:90px 0;background:linear-gradient(135deg,#eafff0,#eef8ff)}.cta-box{background:#fff;border-radius:36px;padding:48px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.cta-box h2{font-size:clamp(34px,5vw,54px);line-height:1.1;letter-spacing:-.05em;margin:0 0 12px}.form{display:flex;gap:10px;max-width:600px;margin:26px auto 0}.form input{flex:1;border:2px solid #dce9e1;border-radius:999px;padding:14px 18px;outline:none}.form input:focus{border-color:#43bb7a}.success{display:none;color:#138455;font-weight:900;margin-top:14px}footer{padding:30px 0 50px;text-align:center;color:#8290a0;font-size:13px}@media(max-width:900px){.navlinks a:not(.btn){display:none}.hero-grid,.pro-grid,.zoo-social,.phone-wrap{grid-template-columns:1fr}.hero{padding-top:36px}.hero-zoo{min-height:470px}.steps{grid-template-columns:1fr}.characters{grid-template-columns:repeat(3,1fr)}.phone-copy{order:-1}}@media(max-width:620px){.wrap{width:min(100% - 24px,1120px)}.nav-in{height:64px}.brand{font-size:17px}.nav .btn{padding:10px 13px;font-size:12px}h1{font-size:45px}.lead{font-size:16px}.hero-zoo{min-height:390px}.blob{inset:25px 0 0}.hero-char{width:128px;padding:5px;border-radius:20px}.hero-char img{border-radius:16px}.hc1{top:82px}.hc2{top:72px}.hc3{top:190px;width:145px}.hc4,.hc5{width:115px}section{padding:64px 0}.characters{grid-template-columns:repeat(2,1fr);gap:10px}.character-meta{padding:9px 10px 11px}.character-meta strong{font-size:14px}.character-meta span{font-size:10px}.pricing{grid-template-columns:1fr}.cta-box{padding:36px 18px}.form{flex-direction:column}.phone-wrap{padding:22px 14px}.pro-copy h2,.social-copy h2{font-size:34px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in"><a class="brand" href="#top">AI<span>どうぶつえん</span>（仮）</a><div class="navlinks"><a href="#how">遊び方</a><a href="#animals">どうぶつ</a><a href="#pro">新種発見</a><a class="btn btn-primary" href="#beta">β版に参加</a></div></div></nav>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">📱 iOS MVP 開発中</div><h1>集中すると、<br><span class="accent">新しいどうぶつ</span>が<br>生まれる。</h1><p class="lead">スマホを置いて25分・50分集中。がんばった時間でタマゴを育てて、ふしぎなどうぶつを集めよう。少しずつ、自分だけのどうぶつえんができていきます。</p><div class="hero-actions"><a class="btn btn-primary" href="#beta">β版の先行案内を受け取る</a><a class="btn btn-secondary" href="#animals">どうぶつを見る ↓</a></div><p class="note">まずはiPhone版から。集中タイマー・孵化・図鑑・My Zooを予定。</p></div><div class="hero-zoo"><div class="blob"></div><div class="zoo-sign">MY ZOO</div><div class="float-pill fp1">🥚 50分で孵化</div><div class="float-pill fp2">✨ 見たことない子に会える</div>
+<div class="hero-char hc1"><img src="assets/char_01.webp" alt="ねこぺん"></div><div class="hero-char hc2"><img src="assets/char_02.webp" alt="ねこくらげ"></div><div class="hero-char hc3"><img src="assets/char_19.webp" alt="とまとねこ"></div><div class="hero-char hc4"><img src="assets/char_20.webp" alt="いちごきつね"></div><div class="hero-char hc5"><img src="assets/char_05.webp" alt="きつねがめ"></div></div></div></section>
+<section id="how"><div class="wrap"><div class="section-head"><h2>スマホを置くことが、<br>ゲームを進めるいちばんの近道。</h2><p>「我慢する」スクリーンタイム管理ではなく、孵化させたいから自然とスマホを置きたくなる体験へ。</p></div><div class="steps"><article class="step"><div class="step-num">1</div><div class="step-icon">⏱️</div><h3>25分 / 50分集中</h3><p>集中したい時間を選んでスタート。iOSでは利用を控えたいアプリを選ぶ体験を想定しています。</p></article><article class="step"><div class="step-num">2</div><div class="step-icon">🥚</div><h3>タマゴが育つ</h3><p>スマホを置いているあいだ、タマゴがじっくり成長。終わるころには何かが生まれそう…。</p></article><article class="step"><div class="step-num">3</div><div class="step-icon">🐣</div><h3>孵化して、My Zooへ</h3><p>集中完了で新しいどうぶつをGET。図鑑を埋め、好きなどうぶつを自分のZooに迎えます。</p></article></div>
+<div class="phone-wrap"><div class="phone"><div class="phone-screen"><div class="phone-top">FOCUS SESSION</div><div class="egg">🥚</div><div class="timer">24:37</div><div class="phone-small">あと少しでタマゴが育ちます</div><div class="phone-cta">スマホを置いて待とう</div></div></div><div class="phone-copy"><h3>待つ時間そのものを、<br>ちょっと楽しみに。</h3><p>集中中はアプリを眺め続ける必要はありません。スマホを伏せて、仕事や勉強へ。時間が来たら「タマゴが孵化したみたい！」とお知らせします。</p><div class="bullet"><div><span class="tick">✓</span><span>集中完了が“ガチャ”のようなごほうびになる</span></div><div><span class="tick">✓</span><span>数字ではなく、愛着の湧くキャラクターが残る</span></div><div><span class="tick">✓</span><span>毎日の集中時間が、少しずつZooの景色になる</span></div></div></div></div></div></section>
+<section class="gallery-section" id="animals"><div class="wrap"><div class="section-head"><h2>どんな子が生まれる？</h2><p>どうぶつ × どうぶつ、果物、野菜、魚、虫、恐竜、モノ…。組み合わせはどんどん広がります。</p></div><div class="filters"><button class="filter active" data-filter="all">ぜんぶ</button><button class="filter" data-filter="どうぶつ">どうぶつ × どうぶつ</button><button class="filter" data-filter="くだもの">どうぶつ × 果物</button><button class="filter" data-filter="海">海のなかま</button><button class="filter" data-filter="やさい">野菜</button></div><div class="characters"><article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_01.webp" alt="ねこぺん（ねこ × ぺんぎん）" loading="lazy">
+  <div class="character-meta"><strong>ねこぺん</strong><span>ねこ × ぺんぎん</span></div>
+</article>
+<article class="character-card" data-cat="海">
+  <img src="assets/char_02.webp" alt="ねこくらげ（ねこ × くらげ）" loading="lazy">
+  <div class="character-meta"><strong>ねこくらげ</strong><span>ねこ × くらげ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_03.webp" alt="しばあざらし（しば犬 × あざらし）" loading="lazy">
+  <div class="character-meta"><strong>しばあざらし</strong><span>しば犬 × あざらし</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_04.webp" alt="うさふくろう（うさぎ × ふくろう）" loading="lazy">
+  <div class="character-meta"><strong>うさふくろう</strong><span>うさぎ × ふくろう</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_05.webp" alt="きつねがめ（きつね × かめ）" loading="lazy">
+  <div class="character-meta"><strong>きつねがめ</strong><span>きつね × かめ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_06.webp" alt="こあらひつじ（コアラ × ひつじ）" loading="lazy">
+  <div class="character-meta"><strong>こあらひつじ</strong><span>コアラ × ひつじ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_07.webp" alt="ぱんだりす（パンダ × りす）" loading="lazy">
+  <div class="character-meta"><strong>ぱんだりす</strong><span>パンダ × りす</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_08.webp" alt="たぬきもぐら（たぬき × もぐら）" loading="lazy">
+  <div class="character-meta"><strong>たぬきもぐら</strong><span>たぬき × もぐら</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_09.webp" alt="くまぺん（くま × ぺんぎん）" loading="lazy">
+  <div class="character-meta"><strong>くまぺん</strong><span>くま × ぺんぎん</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_10.webp" alt="うさきつね（うさぎ × きつね）" loading="lazy">
+  <div class="character-meta"><strong>うさきつね</strong><span>うさぎ × きつね</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_11.webp" alt="りすふくろう（りす × ふくろう）" loading="lazy">
+  <div class="character-meta"><strong>りすふくろう</strong><span>りす × ふくろう</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_12.webp" alt="ひよこじか（ひよこ × しか）" loading="lazy">
+  <div class="character-meta"><strong>ひよこじか</strong><span>ひよこ × しか</span></div>
+</article>
+<article class="character-card" data-cat="海">
+  <img src="assets/char_13.webp" alt="ねこらっこ（ねこ × らっこ）" loading="lazy">
+  <div class="character-meta"><strong>ねこらっこ</strong><span>ねこ × らっこ</span></div>
+</article>
+<article class="character-card" data-cat="海">
+  <img src="assets/char_14.webp" alt="こぶたくらげ（こぶた × くらげ）" loading="lazy">
+  <div class="character-meta"><strong>こぶたくらげ</strong><span>こぶた × くらげ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_15.webp" alt="いぬぱんだ（いぬ × パンダ）" loading="lazy">
+  <div class="character-meta"><strong>いぬぱんだ</strong><span>いぬ × パンダ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_16.webp" alt="くまかめ（くま × かめ）" loading="lazy">
+  <div class="character-meta"><strong>くまかめ</strong><span>くま × かめ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_17.webp" alt="もぐらうさぎ（もぐら × うさぎ）" loading="lazy">
+  <div class="character-meta"><strong>もぐらうさぎ</strong><span>もぐら × うさぎ</span></div>
+</article>
+<article class="character-card" data-cat="どうぶつ">
+  <img src="assets/char_18.webp" alt="きつねふくろう（きつね × ふくろう）" loading="lazy">
+  <div class="character-meta"><strong>きつねふくろう</strong><span>きつね × ふくろう</span></div>
+</article>
+<article class="character-card" data-cat="やさい">
+  <img src="assets/char_19.webp" alt="とまとねこ（トマト × ねこ）" loading="lazy">
+  <div class="character-meta"><strong>とまとねこ</strong><span>トマト × ねこ</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_20.webp" alt="いちごきつね（いちご × きつね）" loading="lazy">
+  <div class="character-meta"><strong>いちごきつね</strong><span>いちご × きつね</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_21.webp" alt="みかんくま（みかん × くま）" loading="lazy">
+  <div class="character-meta"><strong>みかんくま</strong><span>みかん × くま</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_22.webp" alt="ぶどううさぎ（ぶどう × うさぎ）" loading="lazy">
+  <div class="character-meta"><strong>ぶどううさぎ</strong><span>ぶどう × うさぎ</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_23.webp" alt="ばななぺん（バナナ × ぺんぎん）" loading="lazy">
+  <div class="character-meta"><strong>ばななぺん</strong><span>バナナ × ぺんぎん</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_24.webp" alt="りんごはりねずみ（りんご × はりねずみ）" loading="lazy">
+  <div class="character-meta"><strong>りんごはりねずみ</strong><span>りんご × はりねずみ</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_25.webp" alt="めろんひつじ（メロン × ひつじ）" loading="lazy">
+  <div class="character-meta"><strong>めろんひつじ</strong><span>メロン × ひつじ</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_26.webp" alt="ももことり（もも × ことり）" loading="lazy">
+  <div class="character-meta"><strong>ももことり</strong><span>もも × ことり</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_27.webp" alt="さくらんぼりす（さくらんぼ × りす）" loading="lazy">
+  <div class="character-meta"><strong>さくらんぼりす</strong><span>さくらんぼ × りす</span></div>
+</article>
+<article class="character-card" data-cat="くだもの">
+  <img src="assets/char_28.webp" alt="ぱいなっぷるがめ（パイナップル × かめ）" loading="lazy">
+  <div class="character-meta"><strong>ぱいなっぷるがめ</strong><span>パイナップル × かめ</span></div>
+</article></div><div class="infinite">ねこ × 洗濯機？　うさぎ × 月？　ふくろう × ろうそく？　→ なんでもあり。</div></div></section>
+<section class="pro" id="pro"><div class="wrap pro-grid"><article class="species-card"><div class="species-top"><b>SPECIES #01842</b><span class="newbadge">NEW SPECIES</span></div><div class="species-image"><img src="assets/char_10.webp" alt="新種イメージ"></div><h3>うさきつね</h3><div class="discoverer">Discovered by @YOUR_NAME</div></article><div class="pro-copy"><div class="eyebrow">✨ Pro / AI交配</div><h2>今度はあなたが、<br>新種の「発見者」に。</h2><p class="big">有料ユーザーはAIで、まだ世界にいない組み合わせを生成できます。</p><p>名前をつけて、図鑑に発見者名を残す。その子が人気になれば、無料ユーザーのタマゴからも孵化し、世界中のZooへ広がっていきます。</p><div class="mix-box"><span class="mix">🐱 ねこ</span><span class="plus">×</span><span class="mix">🧺 洗濯機</span><span class="plus">→</span><span class="mix">？？？</span></div><div class="mix-box"><span class="mix">🐰 うさぎ</span><span class="plus">×</span><span class="mix">🍮 プリン</span><span class="plus">→</span><span class="mix">？？？</span></div></div></div></section>
+<section><div class="wrap zoo-social"><div class="zoo-map"><h3>YASU's ZOO 🌿</h3><div class="mini-zoo"><img src="assets/char_03.webp"><img src="assets/char_21.webp"><img src="assets/char_07.webp"><img src="assets/char_26.webp"><img src="assets/char_16.webp"><img src="assets/char_23.webp"></div></div><div class="social-copy"><div class="eyebrow">👋 SOCIAL</div><h2>友だちのZooへ、<br>ちょっと遊びに。</h2><p>友だちの動物園を訪問して、見たことのないどうぶつを眺めたり、いいねしたり。将来的には卵の交換や、友だちの個体との交配も。</p><div class="bullet"><div><span class="tick">✓</span><span>「この子かわいい」から発見者のZooへ</span></div><div><span class="tick">✓</span><span>人気の新種がコミュニティに広がっていく</span></div><div><span class="tick">✓</span><span>集中が自分だけでなく、世界をにぎやかにする</span></div></div></div></div></section>
+<section class="freepro"><div class="wrap"><div class="section-head"><h2>無料でも遊べる。<br>Proなら世界を増やせる。</h2><p>MVP後のマネタイズ仮説。まずは遊び続けたくなるかを検証します。</p></div><div class="pricing"><article class="plan"><h3>Free</h3><div class="price">¥0</div><ul><li>集中タイマー</li><li>タマゴ・孵化</li><li>図鑑 / My Zoo</li><li>誰かが発見した新種も孵化</li><li>友だちのZoo訪問</li></ul><a href="#beta" class="btn btn-secondary">β版に参加</a></article><article class="plan proplan"><span class="coming">価格は検証中</span><h3>Pro</h3><div class="price">¥??? <small>/ 月</small></div><ul><li>Freeの全機能</li><li>AI交配で新種を生成</li><li>新種に名前をつける</li><li>発見者名「by @ユーザー名」を掲載</li><li>生成回数アップ / 限定交配</li></ul><a href="#beta" class="btn btn-primary">Pro先行案内を受け取る</a></article></div></div></section>
+<section class="cta" id="beta"><div class="wrap"><div class="cta-box"><div class="eyebrow">🥚 COMING TO iOS</div><h2>今日の25分から、<br>新しい世界を育てよう。</h2><p>iPhone版MVPのβテスター・先行案内を募集する想定のデモフォームです。</p><form class="form" id="betaForm"><input type="email" required placeholder="you@example.com" aria-label="メールアドレス"><button class="btn btn-primary" type="submit">先行案内を受け取る</button></form><div class="success" id="success">登録イメージ完了！実運用時にフォーム送信先を接続できます。</div></div></div></section>
+</main><footer><div class="wrap">AIどうぶつえん（仮） — Focus × Collect × Discover　|　MVP concept 2026</div></footer>
+<script>
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;document.querySelectorAll('.character-card').forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';})}));
+document.getElementById('betaForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('success').style.display='block';e.target.querySelector('input').value='';});
+</script>
+</body></html>
